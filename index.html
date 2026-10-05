@@ -312,6 +312,27 @@ p{margin:0}
 @media(max-width:560px){.book{flex-direction:column;align-items:flex-start}.book-cover{flex:none;width:110px}}
 @media(min-width:720px){.planp{padding:2.6rem 2rem}}
 @media (prefers-reduced-motion:reduce){.gx *,.lay *{transition:none!important}}
+
+/* testimonial slideshow */
+.tsl{display:flex;flex-direction:column;gap:.9rem}
+.tsl-track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:.3rem .1rem 1rem}
+.tsl-track::-webkit-scrollbar{display:none}
+.tsl-card{flex:0 0 86%;scroll-snap-align:start;margin:0;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.4rem 1.4rem 1.3rem;display:flex;flex-direction:column;gap:.8rem;box-shadow:0 8px 22px var(--shadow)}
+.tsl-q{font-family:Georgia,"Iowan Old Style",serif;font-size:3rem;line-height:.6;color:var(--gold);height:1.3rem}
+.tsl-card .tags{font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.tsl-card blockquote{margin:0;font-family:Georgia,"Iowan Old Style",serif;font-style:italic;font-size:1.08rem;line-height:1.6;color:var(--ink);flex:1;display:flex;align-items:center}
+.tsl-card figcaption{display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:var(--muted)}
+.tsl-card figcaption b{display:block;color:var(--ink);font-size:.95rem}
+.tsl-av{flex:0 0 40px;width:40px;height:40px;border-radius:50%;background:var(--tint);color:var(--brand);font:800 .9rem/40px var(--head);text-align:center}
+.tsl-ctl{display:flex;align-items:center;justify-content:center;gap:1rem}
+.tsl-arrow{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);background:var(--surface);color:var(--brand);font-size:1.1rem;cursor:pointer}
+.tsl-dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:70%}
+.tsl-dots button{width:8px;height:8px;padding:0;border:0;border-radius:99px;background:var(--line);cursor:pointer;transition:width .25s ease,background .25s ease}
+.tsl-dots button.on{width:22px;background:var(--gold)}
+.btn-next{background:var(--gold)!important;border-color:var(--gold)!important;color:#1a1405!important;margin-top:.3rem}
+@media(max-width:719px){.tsl-card blockquote{font-size:1rem}}
+@media(min-width:720px){.tsl-card{flex-basis:calc(50% - .5rem)}}
+@media(min-width:1000px){.tsl-card{flex-basis:calc(33.333% - .67rem)}}
 [hidden]{display:none!important}
 </style>
 </head><body>
@@ -407,7 +428,7 @@ p{margin:0}
     <h2>Let's talk about your retirement.</h2>
     <p>Send me a message and we will find a time to go through your numbers together.</p>
     <div class="btns"><a class="btn btn-primary" href="https://wa.me/6581886512?text=Hi%20Raphael%2C%20I%20saw%20your%20e-card%20and%20would%20like%20to%20arrange%20a%20retirement%20income%20planning%20session." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.7-5.2A8.5 8.5 0 1 1 21 12z"/></svg> WhatsApp Raphael</a><a class="btn" href="tel:+6581886512"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> Call +65 8188 6512</a></div>
-    <button class="btn" data-go="meet" style="margin-top:.2rem">See what happens when we meet</button>
+    <button class="btn btn-next" data-go="era">Next: Discover the ERA &#8594;</button>
   </section>
 </section>
 
@@ -520,7 +541,8 @@ p{margin:0}
   <section class="cta">
     <h2>See what an ERA could look like for you.</h2>
     <p>We build it live, with your own CPF numbers, when we meet.</p>
-    <button class="btn" data-go="meet">See what happens when we meet</button>
+    <div class="btns"><a class="btn btn-primary" href="https://wa.me/6581886512?text=Hi%20Raphael%2C%20I%20saw%20your%20e-card%20and%20would%20like%20to%20arrange%20a%20retirement%20income%20planning%20session." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.7-5.2A8.5 8.5 0 1 1 21 12z"/></svg> WhatsApp Raphael</a><a class="btn" href="tel:+6581886512"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> Call +65 8188 6512</a></div>
+    <button class="btn btn-next" data-go="meet">Next: What to expect when we meet &#8594;</button>
   </section>
 </section>
 
@@ -557,6 +579,20 @@ p{margin:0}
       </ul>
     </div>
     <p class="fine">Figures shown in the session are illustrations based on the information you give and on 2026 CPF rules. CPF LIFE estimates are indicative and are not an official CPF Board quotation.</p>
+  </section>
+
+  <section class="sec">
+    <div class="eyebrow">In their words</div>
+    <h2 class="h2">What clients say about working with me.</h2>
+    <div class="tsl" id="tsl" aria-roledescription="carousel" aria-label="Client testimonials">
+      <div class="tsl-track" id="tslTrack" tabindex="0"><figure class="tsl-card"><div class="tsl-q" aria-hidden="true">&ldquo;</div><div class="tags">Accommodating · Down to earth · Understanding</div><blockquote>Do your financial planning early, mai tu liao!!</blockquote><figcaption><span class="tsl-av">AC</span><span><b>Andrew &amp; Christy</b>Professionals</span></figcaption></figure><figure class="tsl-card"><div class="tsl-q" aria-hidden="true">&ldquo;</div><div class="tags">Reliable · Trust · Friendly</div><blockquote>He is professional in his work, advises clients well, and always recommends what&#x27;s best for them.</blockquote><figcaption><span class="tsl-av">LT</span><span><b>Lim Teck Sing</b>Project Manager</span></figcaption></figure><figure class="tsl-card"><div class="tsl-q" aria-hidden="true">&ldquo;</div><blockquote>I feel comfortable and confident leaving the planning of my investment with Raphael.</blockquote><figcaption><span class="tsl-av">AQ</span><span><b>Aileen Quek</b>Retiree</span></figcaption></figure><figure class="tsl-card"><div class="tsl-q" aria-hidden="true">&ldquo;</div><div class="tags">Great · Awesome · Excellent</div><blockquote>Raphael is professional and knowledgeable in his craft, and I would recommend his services to anyone wanting to invest for their retirement.</blockquote><figcaption><span class="tsl-av">AS</span><span><b>Amar Sharma</b>Cargo Manager</span></figcaption></figure><figure class="tsl-card"><div class="tsl-q" aria-hidden="true">&ldquo;</div><div class="tags">Genuine · Friendly · Honest</div><blockquote>If you wish to have an honest and straightforward experience with no fanfare, please do reach out to him. He has helped organise my portfolio with growth results.</blockquote><figcaption><span class="tsl-av">AK</span><span><b>Amelia Khoo</b>Retired</span></figcaption></figure><figure class="tsl-card"><div class="tsl-q" aria-hidden="true">&ldquo;</div><div class="tags">Professional · Versatile · Approachable</div><blockquote>Raphael is committed to sharing his professional views and experience with his clients, and I am confident that we can count on his expertise, professionalism, and sound judgment.</blockquote><figcaption><span class="tsl-av">JF</span><span><b>Janice Foo</b>Auditor</span></figcaption></figure><figure class="tsl-card"><div class="tsl-q" aria-hidden="true">&ldquo;</div><blockquote>Raphael is friendly and sincere with sharing his knowledge with me. There’s some changes in government policy regarding CPF and he is able to break it down in simple terms for me to understand what was before the changes and what is to take place after it.</blockquote><figcaption><span class="tsl-av">DS</span><span><b>Daniel See</b>Client · Nov 2024</span></figcaption></figure><figure class="tsl-card"><div class="tsl-q" aria-hidden="true">&ldquo;</div><div class="tags">Fun · Knowledgeable · Professional</div><blockquote>I highly recommend Raphael&#x27;s service. His blend of professionalism, extensive knowledge, and a fun approach makes navigating insurance enjoyable. He goes the extra mile by diligently preparing for meetings, ensuring a personalized and informed experience.</blockquote><figcaption><span class="tsl-av">ML</span><span><b>Maggie Lui</b>Underwriter</span></figcaption></figure><figure class="tsl-card"><div class="tsl-q" aria-hidden="true">&ldquo;</div><blockquote>As someone who’s often adverse to feeling like a sales targets. I really appreciate Raphael’s honesty and earnestness. His advice and financial feedbacks were genuine and came from a place of wanting to help, share and adding value.</blockquote><figcaption><span class="tsl-av">SL</span><span><b>Sarah Lew</b>Client · Sep 2023</span></figcaption></figure><figure class="tsl-card"><div class="tsl-q" aria-hidden="true">&ldquo;</div><blockquote>Ruffy is a personable and warm agent who tries to get to know his clients to understand individual needs/wants and is not pushy with products that may not be suitable. I really appreciate his patience when I was having technical troubles with my logins, and also appreciate that he tried to minimise the administrative burden on myself when we worked through my various policies. Thanks Ruffy!</blockquote><figcaption><span class="tsl-av">FC</span><span><b>Fay Chiam</b>Client · Apr 2023</span></figcaption></figure><figure class="tsl-card"><div class="tsl-q" aria-hidden="true">&ldquo;</div><blockquote>Very factual analysis of coverage, good use of supporting information from calculators and statistics. Friendly and approachable.</blockquote><figcaption><span class="tsl-av">D</span><span><b>Damien</b>Client · Jul 2023</span></figcaption></figure><figure class="tsl-card"><div class="tsl-q" aria-hidden="true">&ldquo;</div><blockquote>Leave no stones unturned - that’s how detailed I would describe the session with Raphael on planning for my finances.</blockquote><figcaption><span class="tsl-av">P</span><span><b>Patrick</b>Client · Feb 2023</span></figcaption></figure></div>
+      <div class="tsl-ctl">
+        <button type="button" class="tsl-arrow" data-tsl="-1" aria-label="Previous testimonial">&#8592;</button>
+        <div class="tsl-dots" id="tslDots"></div>
+        <button type="button" class="tsl-arrow" data-tsl="1" aria-label="Next testimonial">&#8594;</button>
+      </div>
+    </div>
+    <p class="fine">Testimonials are from Raphael's clients and reflect their own experiences. They are not indicative of future performance or outcomes.</p>
   </section>
 
   <section class="cta">
@@ -656,6 +692,24 @@ p{margin:0}
   var lay=$('#lay');
   if(RM){ lay.classList.add('l1','l2','l3'); }
   else onView(lay,.5,function(){ lay.classList.add('l1'); setTimeout(function(){lay.classList.add('l2')},1200); setTimeout(function(){lay.classList.add('l3')},2300); });
+})();
+</script>
+<script>
+(function(){
+  var track=document.getElementById('tslTrack'); if(!track) return;
+  var cards=track.children, dots=document.getElementById('tslDots'), n=cards.length, idx=0, paused=false, RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for(var i=0;i<n;i++){ var d=document.createElement('button'); d.type='button'; d.setAttribute('aria-label','Testimonial '+(i+1)); (function(k){ d.onclick=function(){ go(k); hold(); }; })(i); dots.appendChild(d); }
+  function cur(){ var x=track.scrollLeft, best=0, bd=1e9; for(var i=0;i<n;i++){ var dd=Math.abs(cards[i].offsetLeft-track.offsetLeft-x); if(dd<bd){bd=dd;best=i;} } return best; }
+  function mark(){ idx=cur(); for(var i=0;i<n;i++) dots.children[i].classList.toggle('on',i===idx); }
+  function maxIdx(){ var last=n-1; while(last>0 && cards[last].offsetLeft-track.offsetLeft>track.scrollWidth-track.clientWidth+2) last--; return last; }
+  function go(k){ var m=maxIdx(); if(k>m) k=0; if(k<0) k=m; track.scrollTo({left:cards[k].offsetLeft-track.offsetLeft}); }
+  var to; function hold(){ paused=true; clearTimeout(to); to=setTimeout(function(){paused=false;},8000); }
+  document.querySelectorAll('[data-tsl]').forEach(function(b){ b.onclick=function(){ go(cur()+(+b.getAttribute('data-tsl'))); hold(); }; });
+  track.addEventListener('scroll',function(){ window.requestAnimationFrame(mark); },{passive:true});
+  ['pointerdown','touchstart','wheel','focusin'].forEach(function(ev){ track.addEventListener(ev,hold,{passive:true}); });
+  track.addEventListener('mouseenter',function(){paused=true}); track.addEventListener('mouseleave',function(){paused=false});
+  mark();
+  if(!RM) setInterval(function(){ if(paused||track.offsetParent===null) return; go(cur()+1); },5000);
 })();
 </script>
 
